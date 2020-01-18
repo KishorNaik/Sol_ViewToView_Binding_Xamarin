@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Sol_Demo.MainPage">
+
+    <StackLayout>
+
+        <Label Text="ROTATION"
+               Rotation="{Binding Source={x:Reference slider}, Path=Value}"
+               FontAttributes="Bold"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+
+        <Slider x:Name="slider"
+                Maximum="360"
+                VerticalOptions="CenterAndExpand"
+                BackgroundColor="Orange"
+                />
+
+        <Label 
+               Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='The angle is {0:F0} degrees'}"
+               FontAttributes="Bold"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+
+</ContentPage>
